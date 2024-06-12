@@ -51,8 +51,8 @@ nav {
   height: 200px;
   text-align: center;
   font-weight: bolder;
-  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+  border-radius: 20px;
   transition: all 0.3s ease; /* Menambahkan transisi untuk efek hover */
 }
 
@@ -63,14 +63,14 @@ nav {
 }
 
 .menu-button span {
-  font-size: 20px;
   margin-top: 20px;
+  font-size: 20px;
   transition: color 0.3s ease;
 }
 
 .menu-button:hover {
   background-color: #bcc6e9;
-  border-radius: 5px;
+  border-radius: 20px; /* Pastikan rounded corners tetap saat hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 

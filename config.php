@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'project_management';
+$dbname = 'sismanpro';
 $username = 'root';
 $password = '';
 
