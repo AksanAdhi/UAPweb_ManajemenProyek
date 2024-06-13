@@ -29,11 +29,11 @@
           <div class="u-layout-row">
             <div class="u-container-style u-layout-cell u-size-14 u-layout-cell-1">
               <div class="u-container-layout u-container-layout-1">
-                <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-heading-font u-radius u-text-body-color u-text-hover-black u-white u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/6315417.png" alt=""></span>&nbsp;SISMANPRO&nbsp; 
+                <a href="dashboard.html" class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-heading-font u-radius u-text-body-color u-text-hover-black u-white u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/6315417.png" alt=""></span>&nbsp;SISMANPRO&nbsp; 
                 </a>
-                <a href="#" class="u-border-0 u-btn u-button-style u-hover-grey-5 u-none u-text-grey-60 u-text-hover-black u-btn-2"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-2"><img src="images/31.png" alt=""></span>&nbsp;&nbsp;Dashboard 
+                <a href="dashboard.html" class="u-border-0 u-btn u-button-style u-hover-grey-5 u-none u-text-grey-60 u-text-hover-black u-btn-2"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-2"><img src="images/31.png" alt=""></span>&nbsp;&nbsp;Dashboard 
                 </a>
-                <a href="#" class="u-border-0 u-btn u-btn-round u-button-style u-custom-font u-heading-font u-hover-grey-5 u-none u-radius u-text-grey-60 u-text-hover-black u-btn-3"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-3"><img src="images/32.png" alt=""></span>&nbsp;&nbsp;Keluar
+                <a href="dashboard.html" class="u-border-0 u-btn u-btn-round u-button-style u-custom-font u-heading-font u-hover-grey-5 u-none u-radius u-text-grey-60 u-text-hover-black u-btn-3"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-3"><img src="images/32.png" alt=""></span>&nbsp;&nbsp;Keluar
                 </a>
                 <div class="u-absolute-hcenter u-border-1 u-border-grey-15 u-line u-line-horizontal u-line-1"></div>
                 <a href="tabel-proyek.php" class="u-border-none u-btn u-button-style u-hover-grey-5 u-none u-text-grey-60 u-text-hover-black u-btn-4"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-4"><img src="images/33.png" alt=""></span>&nbsp;&nbsp;Proyek
