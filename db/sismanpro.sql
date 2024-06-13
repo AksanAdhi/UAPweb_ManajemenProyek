@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 12:18 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jun 13, 2024 at 12:48 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,9 +72,9 @@ CREATE TABLE `daftar_anggota` (
 --
 
 INSERT INTO `daftar_anggota` (`idAnggota`, `namaAnggota`, `idTim`) VALUES
-(1, 'Bianka', 2),
-(2, 'Taehyung', 2),
-(3, 'Jimin', 1);
+(19, 'Mitha', 5),
+(20, 'Nca', 6),
+(21, 'Serrendie', 7);
 
 -- --------------------------------------------------------
 
@@ -94,9 +94,9 @@ CREATE TABLE `daftar_jadwal` (
 --
 
 INSERT INTO `daftar_jadwal` (`idJadwal`, `idProyek`, `idTugas`, `statusTugas`) VALUES
-(2, 2, 1, 'SEDANG_DIPROSES'),
-(11, 6, 1, 'BELUM_DIMULAI'),
-(12, 15, 2, 'SEDANG_DIPROSES');
+(14, 16, 4, 'BELUM_DIMULAI'),
+(15, 16, 4, 'BELUM_DIMULAI'),
+(16, 15, 4, 'SEDANG_DIPROSES');
 
 -- --------------------------------------------------------
 
@@ -117,21 +117,8 @@ CREATE TABLE `daftar_proyek` (
 --
 
 INSERT INTO `daftar_proyek` (`id`, `nama`, `tujuan`, `tenggat_waktu`, `anggaran`) VALUES
-(1, 'Proyek PBO', 'Melatih kemampuan dalam menggunakan Java', '2023-12-16', 100000),
-(2, 'Proyek Komdat', 'Agar mampu merakit jaringan wifi', '2023-12-13', 50000),
-(3, 'Pengeboran Minyak', 'Mengambil sumber daya alam yang ada', '2030-10-16', 1200000000),
-(4, 'Pembangunan Hotel', 'Memajukan kesejahteraan pemilik hotel', '2025-02-13', 750000000),
-(5, 'Pembangunan Rumah Sakit', 'Memfasilitasi masyarakat penyakitan', '2026-03-20', 2500000000),
-(6, 'Pembangunan apartemen', 'Menyediakan tempat tinggal', '2027-06-15', 9500000000),
-(7, 'Pembangunan MRT di Lampung', 'Menyediakan transportasi umum bagi masyarakat Lampung', '2035-05-16', 3500000000000),
-(8, 'Pembangunan Stadion JIS', 'Menyediakan stadion nasional bagi masyarakat', '2032-03-10', 4100000000000),
-(9, 'Pembangunan Kos', 'Menyediakan tempat tinggal bagi anak kos', '2025-10-11', 500000),
-(10, 'Pembangunan Sekolah', 'Membangun sekolah bermutu', '2026-01-12', 145000000),
-(12, 'angga yunanda', 'menjadi pacarku', '2025-12-12', 10000),
-(13, 'Pembangunan Kontrakan', 'Menyediakan tempat tinggal ', '2024-01-20', 120000000),
-(15, 'pembangunan masjid', 'biar bisa sholat', '2024-10-20', 1000000000),
-(100, 'bianka', 'ingin menyejahterakan sjdskjskfjskjfskajfkslajf;lsakfaslalala yeyeyeyyeye wohoooooooooooooooooooooooooddddddddddddd', '2023-10-12', 12000),
-(72100, 'Huru', 'Membangun rumah makan', '2023-12-10', 10000);
+(15, 'Kantin Ilmu Komputer', 'Kasian anak ilkomp jajan di fkip', '2024-06-22', 24234),
+(16, 'Mushola FMIPA', 'Biar bisa sholat', '2024-06-22', 345000);
 
 -- --------------------------------------------------------
 
@@ -150,9 +137,9 @@ CREATE TABLE `daftar_tim` (
 --
 
 INSERT INTO `daftar_tim` (`idTim`, `namaTim`, `idProyek`) VALUES
-(1, 'Vargo', 1),
-(2, 'Firewall', 2),
-(3, 'Fivey', 13);
+(5, 'Kosmilenial', 15),
+(6, 'Hallistic', 16),
+(7, 'Pancaindra', 16);
 
 -- --------------------------------------------------------
 
@@ -173,8 +160,7 @@ CREATE TABLE `daftar_tugas` (
 --
 
 INSERT INTO `daftar_tugas` (`idTugas`, `idAnggota`, `namaTugas`, `tanggalMulai`, `tanggalSelesai`) VALUES
-(1, 2, 'Membangun candi', '2023-12-28', '2023-12-29'),
-(2, 3, 'Menyewa alat berat', '2023-12-21', '2023-12-22');
+(4, 21, 'Membeli material', '2024-06-20', '2024-06-22');
 
 --
 -- Indexes for dumped tables
@@ -191,7 +177,7 @@ ALTER TABLE `akun_anggota`
 --
 ALTER TABLE `daftar_anggota`
   ADD PRIMARY KEY (`idAnggota`),
-  ADD KEY `idTim` (`idTim`);
+  ADD KEY `daftar_anggota_ibfk_1` (`idTim`);
 
 --
 -- Indexes for table `daftar_jadwal`
@@ -226,16 +212,34 @@ ALTER TABLE `daftar_tugas`
 --
 
 --
+-- AUTO_INCREMENT for table `daftar_anggota`
+--
+ALTER TABLE `daftar_anggota`
+  MODIFY `idAnggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT for table `daftar_jadwal`
 --
 ALTER TABLE `daftar_jadwal`
-  MODIFY `idJadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idJadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `daftar_proyek`
+--
+ALTER TABLE `daftar_proyek`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `daftar_tim`
+--
+ALTER TABLE `daftar_tim`
+  MODIFY `idTim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `daftar_tugas`
 --
 ALTER TABLE `daftar_tugas`
-  MODIFY `idTugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idTugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -245,26 +249,26 @@ ALTER TABLE `daftar_tugas`
 -- Constraints for table `daftar_anggota`
 --
 ALTER TABLE `daftar_anggota`
-  ADD CONSTRAINT `daftar_anggota_ibfk_1` FOREIGN KEY (`idTim`) REFERENCES `daftar_tim` (`idTim`);
+  ADD CONSTRAINT `daftar_anggota_ibfk_1` FOREIGN KEY (`idTim`) REFERENCES `daftar_tim` (`idTim`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `daftar_jadwal`
 --
 ALTER TABLE `daftar_jadwal`
-  ADD CONSTRAINT `daftar_jadwal_ibfk_1` FOREIGN KEY (`idProyek`) REFERENCES `daftar_proyek` (`id`),
-  ADD CONSTRAINT `daftar_jadwal_ibfk_2` FOREIGN KEY (`idTugas`) REFERENCES `daftar_tugas` (`idTugas`);
+  ADD CONSTRAINT `daftar_jadwal_ibfk_1` FOREIGN KEY (`idProyek`) REFERENCES `daftar_proyek` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `daftar_jadwal_ibfk_2` FOREIGN KEY (`idTugas`) REFERENCES `daftar_tugas` (`idTugas`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `daftar_tim`
 --
 ALTER TABLE `daftar_tim`
-  ADD CONSTRAINT `daftar_tim_ibfk_1` FOREIGN KEY (`idProyek`) REFERENCES `daftar_proyek` (`id`);
+  ADD CONSTRAINT `daftar_tim_ibfk_1` FOREIGN KEY (`idProyek`) REFERENCES `daftar_proyek` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `daftar_tugas`
 --
 ALTER TABLE `daftar_tugas`
-  ADD CONSTRAINT `daftar_tugas_ibfk_1` FOREIGN KEY (`idAnggota`) REFERENCES `daftar_anggota` (`idAnggota`);
+  ADD CONSTRAINT `daftar_tugas_ibfk_1` FOREIGN KEY (`idAnggota`) REFERENCES `daftar_anggota` (`idAnggota`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
