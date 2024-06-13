@@ -342,42 +342,84 @@
         <div class="u-container-layout u-container-layout-1">
           <h4 class="u-align-center u-text u-text-default u-text-1">Edit Jadwal</h4>
           <div class="custom-expanded u-border-2 u-border-palette-5-base u-custom-color-2 u-form u-radius u-form-1">
-            <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-12 u-form-vertical u-inner-form" source="email" name="form" style="padding: 20px;">
+            <form action="edit_jadwal.php" class="u-clearfix u-form-spacing-12 u-form-vertical u-inner-form" source="email" name="form" style="padding: 20px;">
               <div class="u-form-group u-form-name u-form-partition-factor-2 u-label-top">
                 <label for="name-04ca" class="u-custom-font u-heading-font u-label u-label-1">ID</label>
-                <input type="text" placeholder="Masukkan ID jadwal" id="name-04ca" name="idJadwal" class="u-input u-input-rectangle u-radius u-input-1" required="">
+                <select id="idTugas" name="idTugas" class="u-input u-input-rectangle u-radius u-input-3" required>
+                                <?php
+
+                                include 'koneksi.php';
+                                // Fetch team options from database
+                                $sql_jadwal = "SELECT idJadwal, statusTugas FROM daftar_jadwal";
+                                $result_jadwal = $conn->query($sql_jadwal);
+
+                                if ($result_jadwal->num_rows > 0) {
+                                    while ($row_jadwal = $result_jadwal->fetch_assoc()) {
+                                        $selected = ($row_jadwal['idJadwal'] == $row['idJadwal']) ? 'selected' : '';
+                                        echo "<option value='" . $row_jadwal['idJadwal'] . "' $selected>" . $row_jadwal['statusTugas'] . "</option>";
+                                    }
+                                } else {
+                                    echo "<option value=''>Tidak ada jadwal</option>";
+                                }
+                                ?>
+                            </select>
               </div>
               <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-2">
                 <label for="select-6410" class="u-custom-font u-heading-font u-label u-label-2">Proyek</label>
                 <div class="u-form-select-wrapper">
-                  <select id="select-6410" name="idProyek" class="u-input u-input-rectangle u-radius u-input-2">
-                    <option value="Item 1" data-calc="">Item 1</option>
-                    <option value="Item 2" data-calc="">Item 2</option>
-                    <option value="Item 3" data-calc="">Item 3</option>
-                  </select>
+                <select id="idProyek" name="idProyek" class="u-input u-input-rectangle u-radius u-input-2" required>
+                                <?php
+                                include 'koneksi.php';
+                                // Fetch project options from database
+                                $sql_proyek = "SELECT idProyek, namaProyek FROM proyek";
+                                $result_proyek = $conn->query($sql_proyek);
+
+                                if ($result_proyek->num_rows > 0) {
+                                    while ($row_proyek = $result_proyek->fetch_assoc()) {
+                                        $selected = ($row_proyek['idProyek'] == $row['idProyek']) ? 'selected' : '';
+                                        echo "<option value='" . $row_proyek['idProyek'] . "' $selected>" . $row_proyek['namaProyek'] . "</option>";
+                                    }
+                                } else {
+                                    echo "<option value=''>Tidak ada proyek</option>";
+                                }
+                                ?>
+                            </select>
+
                   <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
                 </div>
               </div>
               <div class="u-form-group u-form-select u-label-top u-form-group-3">
                 <label for="select-758e" class="u-custom-font u-heading-font u-label u-label-3">Tugas</label>
                 <div class="u-form-select-wrapper">
-                  <select id="select-758e" name="idTugas" class="u-input u-input-rectangle u-radius u-input-3">
-                    <option value="Item 1" data-calc="">Item 1</option>
-                    <option value="Item 2" data-calc="">Item 2</option>
-                    <option value="Item 3" data-calc="">Item 3</option>
-                  </select>
+                <select id="idTugas" name="idTugas" class="u-input u-input-rectangle u-radius u-input-3" required>
+                                <?php
+                                include 'koneksi.php';
+                                // Fetch task options from database
+                                $sql_tugas = "SELECT idTugas, namaTugas FROM tugas";
+                                $result_tugas = $conn->query($sql_tugas);
+
+                                if ($result_tugas->num_rows > 0) {
+                                    while ($row_tugas = $result_tugas->fetch_assoc()) {
+                                        $selected = ($row_tugas['idTugas'] == $row['idTugas']) ? 'selected' : '';
+                                        echo "<option value='" . $row_tugas['idTugas'] . "' $selected>" . $row_tugas['namaTugas'] . "</option>";
+                                    }
+                                } else {
+                                    echo "<option value=''>Tidak ada tugas</option>";
+                                }
+                                ?>
+                            </select>
                   <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
                 </div>
               </div>
               <div class="u-form-group u-form-select u-label-top u-form-group-4">
                 <label for="select-882b" class="u-custom-font u-heading-font u-label u-label-4">Status Tugas</label>
                 <div class="u-form-select-wrapper">
-                  <select id="select-882b" name="statusTugas" class="u-input u-input-rectangle u-radius u-input-4">
-                    <option value="SEDANG_DIPROSES" data-calc="SEDANG_DIPROSES">SEDANG_DIPROSES</option>
-                    <option value="BELUM_DIMULAI" data-calc="BELUM_DIMULAI">BELUM_DIMULAI</option>
-                    <option value="SELESAI" data-calc="SELESAI">SELESAI</option>
-                    <option data-calc="TERTUNDA" value="TERTUNDA">TERTUNDA</option>
-                  </select>
+                <select id="statusTugas" name="statusTugas" class="u-input u-input-rectangle u-radius u-input-4" required>
+                                <option value="SEDANG_DIPROSES" <?php if ($row['statusTugas'] == 'SEDANG_DIPROSES') echo 'selected'; ?>>SEDANG_DIPROSES</option>
+                                <option value="BELUM_DIMULAI" <?php if ($row['statusTugas'] == 'BELUM_DIMULAI') echo 'selected'; ?>>BELUM_DIMULAI</option>
+                                <option value="SELESAI" <?php if ($row['statusTugas'] == 'SELESAI') echo 'selected'; ?>>SELESAI</option>
+                                <option value="TERTUNDA" <?php if ($row['statusTugas'] == 'TERTUNDA') echo 'selected'; ?>>TERTUNDA</option>
+                            </select>
                   <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
                 </div>
               </div>
