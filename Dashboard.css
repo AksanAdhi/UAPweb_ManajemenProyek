@@ -9,7 +9,11 @@ body {
 }
 
 header {
+<<<<<<< HEAD
   background-color: #000080;
+=======
+  background-color: #6b6bed;
+>>>>>>> 234fc152a4261ae84d1b5252dc30fb6d150ca838
   width: 100%;
   text-align: center;
   padding: 20px;
@@ -45,7 +49,11 @@ nav {
   align-items: center;
   justify-content: center; /* Untuk menengah secara vertikal */
   text-decoration: none;
+<<<<<<< HEAD
   color: #000080;
+=======
+  color: #6b6bed;
+>>>>>>> 234fc152a4261ae84d1b5252dc30fb6d150ca838
   background-color: #ffffff;
   width: 200px;
   height: 200px;
@@ -79,7 +87,11 @@ nav {
 }
 
 footer {
+<<<<<<< HEAD
   background-color: #000080;
+=======
+  background-color: #6b6bed;
+>>>>>>> 234fc152a4261ae84d1b5252dc30fb6d150ca838
   color: white;
   width: 100%;
   text-align: center;

@@ -43,7 +43,11 @@ $result = $conn->query($sql);
               <div class="u-container-layout u-container-layout-1">
                 <a href="dashboard.html" class="u-border-none u-btn u-btn-round u-button-style u-custom-font u-heading-font u-radius u-text-body-color u-text-hover-black u-white u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/6315417.png" alt=""></span>&nbsp;SISMANPRO&nbsp; 
                 </a>
+<<<<<<< HEAD
                 <a href="dashboard.html" class="u-border-0 u-btn u-button-style u-hover-grey-5 u-none u-text-grey-60 u-text-hover-black u-btn-2"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-2"><img src="images/31.png" alt=""></span>&nbsp;&nbsp;Dashboard 
+=======
+                <a href="Dashboard.html" class="u-border-0 u-btn u-button-style u-hover-grey-5 u-none u-text-grey-60 u-text-hover-black u-btn-2"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-2"><img src="images/31.png" alt=""></span>&nbsp;&nbsp;Dashboard 
+>>>>>>> 234fc152a4261ae84d1b5252dc30fb6d150ca838
                 </a>
                 <a href="dashboard.html" class="u-border-0 u-btn u-btn-round u-button-style u-custom-font u-heading-font u-hover-grey-5 u-none u-radius u-text-grey-60 u-text-hover-black u-btn-3"><span class="u-file-icon u-icon u-text-palette-1-dark-1 u-icon-3"><img src="images/32.png" alt=""></span>&nbsp;&nbsp;Keluar
                 </a>
